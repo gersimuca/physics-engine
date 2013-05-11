@@ -7,7 +7,7 @@ find_package(SDL2 REQUIRED)
 
 
 # Add source to this project's executable.
-add_executable (engine WIN32 "engine.cpp" "engine.h" "ball.h" "bal.cpp")
+add_executable (engine WIN32 "main.cpp" "main.h" "ball.h" "ball.cpp")
 
 target_link_libraries(engine SDL2::SDL2 SDL2::SDL2main)
 
