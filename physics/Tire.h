@@ -40,7 +40,7 @@ struct TireState {
 
 class Tire {
 public:
-    explicit Tire(TireParams params = {}) : m_params(params) {}
+    explicit Tire(Tire params = {}) : m_params(params) {}
 
     /// Returns [Fx (forward), Fy (lateral), Mz (aligning torque)]
     /// given contact patch normal force and current slip state.
@@ -59,11 +59,11 @@ public:
     TireState computeSlip(double forwardVel, double lateralVel,
                           double angularVel) const;
 
-    const TireParams& params() const { return m_params; }
-    void  setParams(const TireParams& p) { m_params = p; }
+    const Tire& params() const { return m_params; }
+    void  setParams(const Tire& p) { m_params = p; }
 
 private:
-    TireParams m_params;
+    Tire m_params;
 
     /// Pacejka Magic Formula: y = D·sin(C·atan(B·x - E·(B·x - atan(B·x))))
     static double magicFormula(double B, double C, double D, double E, double x);
