@@ -5,7 +5,7 @@ Simulation car physics engine with Qt6 UI and Google Test suite.
 ## Architecture
 
 ```
-car_physics_engine/
+physics_engine/
 ├── physics/
 │   ├── Vector3         – 3D math (dot, cross, normalize, lerp)
 │   ├── RigidBody       – 6-DOF Newton-Euler integration
@@ -16,21 +16,6 @@ car_physics_engine/
 │   ├── Chassis         – Weight transfer, torsional flex, roll/pitch stiffness
 │   ├── Vehicle         – Assembles all subsystems per-timestep
 │   └── PhysicsEngine   – Fixed-timestep loop, multi-vehicle, callbacks
-├── ui/
-│   ├── MainWindow      – Qt6 shell, keyboard input, 60 Hz UI tick
-│   ├── SimulationView  – 2D top-down renderer (track trail, G-vectors, HUD)
-│   ├── TelemetryPanel  – Live Qt Charts: speed, RPM, G-forces, corner loads
-│   ├── DashboardWidget – Analogue gauges (speedometer, RPM, gear, G-ball)
-│   └── VehicleControlPanel – Sliders for throttle/brake/steer, shift buttons
-└── tests/
-    ├── test_vector3        (18 tests)
-    ├── test_tire           (13 tests)
-    ├── test_suspension     (10 tests)
-    ├── test_aerodynamics   (9 tests)
-    ├── test_drivetrain     (13 tests)
-    ├── test_chassis        (10 tests)
-    ├── test_vehicle        (12 tests)
-    └── test_physics_engine (14 tests)
 ```
 
 ## Prerequisites (Ubuntu 24.04)
@@ -45,7 +30,7 @@ sudo apt-get install -y \
 ## Build
 
 ```bash
-cd car_physics_engine
+cd physics_engine
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cmake --build . --parallel
